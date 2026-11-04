@@ -1,0 +1,29 @@
+# ==============================================================================
+# Detection Configuration (Example / Default Template)
+# ==============================================================================
+# NOTE: This configuration file defines default schema and example parameter
+# values for the planned swimmer detection module. It is not currently wired
+# to a functional implementation.
+# ==============================================================================
+
+model:
+  architecture: "yolov8m"         # Target detection model architecture
+  weights_path: "models/swimmer_detector.pt" # Local path to model weights
+  input_size: [1280, 1280]        # Image dimensions [height, width] (higher resolution for small aerial targets)
+  device: "cuda"                  # Execution target: 'cuda', 'cpu', or 'mps'
+
+inference:
+  confidence_threshold: 0.25      # Minimum confidence score for candidate detections
+  iou_threshold: 0.45             # Intersection-over-Union (IoU) threshold for NMS
+  max_detections: 100             # Maximum predicted bounding boxes per frame
+
+classes:
+  target_classes:
+    - 0                           # Target class ID (e.g., 0: "swimmer" or "person")
+  class_names:
+    0: "swimmer"
+
+preprocessing:
+  normalize: true
+  letterbox: true
+

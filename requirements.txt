@@ -1,0 +1,22 @@
+# Aerial Distress Detection Tutorial - Essential Initial Dependencies
+
+# Configuration parsing
+pyyaml>=6.0
+
+# Scientific computing and data structures
+numpy>=1.23.0
+
+# Image and video processing
+opencv-python>=4.7.0
+
+# Data handling and metrics
+pandas>=2.0.0
+
+# Deep learning framework (Core)
+# Note: Install with appropriate CUDA support if using GPU (e.g. via pytorch.org)
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Progress bars and developer ergonomics
+tqdm>=4.65.0
+

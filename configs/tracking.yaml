@@ -1,0 +1,22 @@
+# ==============================================================================
+# Tracking Configuration (Example / Default Template)
+# ==============================================================================
+# NOTE: This configuration file defines default schema and example parameter
+# values for the planned multi-object tracking (MOT) module. It is not currently
+# wired to a functional implementation.
+# ==============================================================================
+
+tracker:
+  type: "bytetrack"               # Algorithm type: 'bytetrack' or 'ocsort'
+  frame_rate: 30                  # Expected video frame rate (fps)
+
+association:
+  track_threshold: 0.5            # High-confidence detection threshold for first-stage matching
+  match_threshold: 0.8            # Cost matrix matching threshold (IoU distance)
+  track_buffer: 60                # Number of frames to preserve lost tracks before termination
+  min_box_area: 10                # Minimum bounding box area (in pixels) to consider
+
+kalman_filter:
+  std_weight_position: 0.05       # Motion model state transition noise weighting
+  std_weight_velocity: 0.00625
+

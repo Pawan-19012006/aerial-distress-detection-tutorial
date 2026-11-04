@@ -1,0 +1,2 @@
+"""Swimmer detection module package."""
+

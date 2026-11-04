@@ -1,0 +1,28 @@
+# ==============================================================================
+# Temporal Distress Analysis Configuration (Example / Default Template)
+# ==============================================================================
+# NOTE: This configuration file defines default schema and example parameter
+# values for the planned temporal distress analysis module. It is not currently
+# wired to a functional implementation.
+# ==============================================================================
+
+temporal_window:
+  window_size_frames: 64          # Temporal window length per swimmer trajectory
+  stride_frames: 16               # Sliding window stride length
+  min_track_history: 32           # Minimum continuous tracked frames required before evaluation
+
+analysis:
+  feature_extractor: "kinematics_and_appearance" # 'kinematics_only', 'appearance_only', or 'hybrid'
+  distress_threshold: 0.65        # Anomaly / distress probability threshold for triggering alerts
+
+classification:
+  labels:
+    0: "normal_swimming"
+    1: "treading_water"
+    2: "waving_signaling"
+    3: "passive_immersion"
+
+smoothing:
+  temporal_filter: "exponential_moving_average"
+  ema_alpha: 0.3
+
