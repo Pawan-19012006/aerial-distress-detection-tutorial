@@ -2,17 +2,26 @@
 
 This directory is designated for datasets and local testing media used throughout the tutorial.
 
+## Dataset Acquisition
+
+The dataset used in this tutorial is **SeaDronesSee** (specifically the Object Detection v2 track).
+
+- **Official Source:** [https://seadronessee.cs.uni-tuebingen.de/](https://seadronessee.cs.uni-tuebingen.de/)
+- **Download Instructions:** Visit the official portal, register/request access according to their guidelines, and download the dataset archive.
+- **Placement:** Extract the downloaded dataset contents directly into `data/seadronessee/`.
+- **License and Terms:** SeaDronesSee is provided by its respective authors under its own research/usage terms. Check the official dataset license and citation requirements before use or redistribution.
+
 ## Directory Structure
 
 ```text
 data/
-├── README.md       # Dataset and storage guidelines
-└── sample/         # Permitted local video clips and test images (not tracked by Git)
+├── README.md              # Dataset guidance and instructions
+├── sample/                # Directory for local sample clips/frames
+└── seadronessee/          # Place extracted SeaDronesSee dataset here
+    └── .gitkeep
 ```
 
-## Guidelines
+## Important Warnings
 
-- **Raw Datasets:** Full benchmark datasets (such as SeaDronesSee) must **not** be stored directly inside version control. Refer to [`docs/dataset.md`](../docs/dataset.md) for details on dataset acquisition, directory structure, and licensing terms.
-- **Sample Media:** Place small, permitted test clips or sample frames into `data/sample/`. These can be used for quick pipeline testing and visual debugging.
-- **Git Tracking:** All contents under `data/` (except documentation and placeholder markers) are ignored by `.gitignore` to prevent accidental commits of large video files and third-party data assets.
-
+- **Do NOT commit dataset files to Git:** Raw imagery and annotation archives are excluded via `.gitignore`. Committing large image sets bloats repository size and may violate dataset redistribution licenses.
+- Keep all local dataset downloads inside `data/seadronessee/` or specify an external path when running tools.
